@@ -39,6 +39,11 @@ public class ChatListener extends UnicastRemoteObject implements
     client.close(user);
   }
 
+  public String info() throws RemoteException
+  {
+    return client.info();
+  }
+
   public void addPropertyChangeListener(String propertyName,
       RemotePropertyChangeListener<ServerData> listener)
   {

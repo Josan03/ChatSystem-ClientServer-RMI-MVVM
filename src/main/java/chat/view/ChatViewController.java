@@ -21,10 +21,16 @@ public class ChatViewController implements PropertyChangeListener
   @FXML public Button exitButton;
   @FXML public Button messageSend;
   @FXML public TextArea messageInput;
+  @FXML public Button infoButton;
 
   private ViewHandler viewHandler;
   private ChatViewModel chatViewModel;
   private Region root;
+
+  @FXML public void info()
+  {
+    chatViewModel.info();
+  }
 
   @FXML public void onExit()
   {

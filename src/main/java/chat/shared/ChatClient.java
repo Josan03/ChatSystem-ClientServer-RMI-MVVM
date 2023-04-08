@@ -12,6 +12,7 @@ public interface ChatClient extends Remote
   boolean connect(User user) throws RemoteException;
   boolean send(User user, Message message) throws RemoteException;
   void close(User user) throws RemoteException;
+  String info() throws RemoteException;
   void addPropertyChangeListener(RemotePropertyChangeListener<ServerData> listener) throws RemoteException;
   void removePropertyChangeListener(RemotePropertyChangeListener<ServerData> listener) throws RemoteException;
 }

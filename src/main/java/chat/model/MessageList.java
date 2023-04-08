@@ -17,6 +17,14 @@ public class MessageList implements Serializable
     this.messages = messageList;
   }
 
+  public void add(Message message)
+  {
+    if (message != null)
+    {
+      messages.add(message);
+    }
+  }
+
   public ArrayList<Message> getMessages()
   {
     return messages;

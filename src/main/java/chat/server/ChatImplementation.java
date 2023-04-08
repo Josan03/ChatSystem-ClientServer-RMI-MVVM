@@ -7,7 +7,6 @@ import chat.model.Message;
 import chat.model.User;
 import dk.via.remote.observer.RemotePropertyChangeListener;
 import dk.via.remote.observer.RemotePropertyChangeSupport;
-
 import java.io.File;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -72,6 +71,15 @@ public class ChatImplementation extends UnicastRemoteObject implements
     logs.log(message.getMessage());
     ServerData serverData = new ServerData("removeUser", users, messages);
     support.firePropertyChange("removeUser", null, serverData);
+  }
+
+  @Override public String info() throws RemoteException
+  {
+    String users = "Registered number of users: " + this.users.size();
+    String messages = "Registered number of messages: " + this.messages.size();
+    String serverInfo = users + "\n"+ messages;
+    logs.log("Server: \n" + serverInfo);
+    return serverInfo;
   }
 
   @Override public void addPropertyChangeListener(

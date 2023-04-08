@@ -105,6 +105,19 @@ public class ModelManager implements RemotePropertyChangeListener<ServerData>
     }
   }
 
+  public void info()
+  {
+    try
+    {
+      messageList.add(new Message(new User("Server"), client.info()));
+      support.firePropertyChange("info", null, messageList);
+    }
+    catch (RemoteException e)
+    {
+      throw new RuntimeException(e);
+    }
+  }
+
   public void addPropertyChangeListener(String propertyName,
       PropertyChangeListener listener)
   {

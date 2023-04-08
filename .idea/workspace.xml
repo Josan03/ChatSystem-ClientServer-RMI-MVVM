@@ -48,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +73,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/VIA University/Semester 2/SWE1/SWE1",
+    "last_opened_file_path": "C:/Users/crist/IdeaProjects/ViaUniversity/Semester2/Assignment3_ChatSystem_RMI",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -88,7 +88,7 @@
       <recent name="chat" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StartClient">
+  <component name="RunManager" selected="Application.ChatServer">
     <configuration name="ChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chat.server.ChatServer" />
       <module name="Assignment3_ChatSystem_RMI" />

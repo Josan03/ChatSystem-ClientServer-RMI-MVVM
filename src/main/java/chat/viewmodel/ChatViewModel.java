@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.rmi.server.ServerNotActiveException;
 
 public class ChatViewModel implements PropertyChangeListener
 {
@@ -32,6 +33,7 @@ public class ChatViewModel implements PropertyChangeListener
 
     this.modelManager.addPropertyChangeListener("users", this);
     this.modelManager.addPropertyChangeListener("messages", this);
+    this.modelManager.addPropertyChangeListener("info", this);
   }
 
   public void bindUsers(ObjectProperty<ObservableList<User>> property)
@@ -77,6 +79,11 @@ public class ChatViewModel implements PropertyChangeListener
     support.removePropertyChangeListener(propertyName, listener);
   }
 
+  public void info()
+  {
+     modelManager.info();
+  }
+
   public void update()
   {
     users.setAll(modelManager.getUserList());
@@ -86,8 +93,8 @@ public class ChatViewModel implements PropertyChangeListener
   @Override public void propertyChange(PropertyChangeEvent evt)
   {
     Platform.runLater(() -> {
-      update();
-      support.firePropertyChange("update", false, true);
+        update();
+        support.firePropertyChange("update", false, true);
     });
   }
 }
